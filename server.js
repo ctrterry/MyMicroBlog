@@ -425,7 +425,7 @@ app.post('/setBackground', ensureAuthenticated, async (req, res) => {
 
 app.get('/fetch-emojis', async (req, res) => {
    try {
-       const apiKey = 'f17d08ed9083f34b80fabba9d06d597517ede322';
+       const apiKey = 'emoij-vpn-key';
        const response = await fetch(`https://emoji-api.com/emojis?access_key=${apiKey}`);
        const emojis = await response.json();
        res.json(emojis);
@@ -434,18 +434,6 @@ app.get('/fetch-emojis', async (req, res) => {
        res.status(500).send('Error fetching emojis');
    }
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 app.listen(PORT, () => {
